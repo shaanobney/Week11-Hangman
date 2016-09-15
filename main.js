@@ -61,7 +61,7 @@ game = {
 			self.keepPromptingUser();
 		}
 		else if (self.chancesRemaining == 0) {
-			console.log('Seriously? You used a third of the alphabet and still LOST! YOU LOSE!\nThe word was:', self.currentWrd.word.toUpperCase());
+			console.log('Seriously? You used a third of the alphabet and still lost! YOU LOSE!\nThe word was:', self.currentWrd.word.toUpperCase());
 		} else {
 			console.log(self.currentWrd.wordRender());
 		}
