@@ -1,6 +1,6 @@
 var Letter = function(letter) {
-	this.charac = letter;
 	this.appear = false;
+	this.charac = letter;
 	this.letterRender = function() {
 		if (this.appear) {
 			return this.charac;
