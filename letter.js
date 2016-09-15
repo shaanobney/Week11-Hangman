@@ -1,4 +1,4 @@
-var Letter = function(letter) {
+var Letter = function(letter) { //BASED ON LETTER INPUT EITHER SETS AN UNDERSCORE OR THE INPUT
 	this.appear = false;
 	this.charac = letter;
 	this.letterRender = function() {

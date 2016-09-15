@@ -24,6 +24,8 @@ game = {
 	startGame: function (aWord) { //SETS INITIAL CONDITIONS
 		this.resetChances();
 		this.currentWrd = new Word(this.wordBank[Math.floor(Math.random()* this.wordBank.length)]);
+		// console.log(this.currentWrd);
+		// debugger;
 		this.currentWrd.getLets();
 		this.keepPromptingUser();
 	},

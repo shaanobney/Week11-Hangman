@@ -1,19 +1,19 @@
 
 var Letter = require('./Letter');
 
-var Word = function(aWord) {
+var Word = function(aWord) { 
 	this.word = aWord;
 	this.found = false;
 	this.lets = [];
 
-	this.getLets = function() {
+	this.getLets = function() { //GETS LETTERS
 		for (i = 0; i < this.word.length; i++) {
 			var newLet = new Letter(this.word.charAt(i));
 			this.lets.push(newLet);
 		}
 	};
 
-	this.didWeFindTheWord = function() {
+	this.didWeFindTheWord = function() { //DETERMINES WORD
 		this.found = true;
 		for (i = 0; i < this.lets.length; i++) {
 			if (this.lets[i].appear === false) {
@@ -23,7 +23,7 @@ var Word = function(aWord) {
 		return this.found;
 	};
 
-	this.checkIfLetterFound = function(chosenLetter) {
+	this.checkIfLetterFound = function(chosenLetter) { //DOES LETTER MATCH
 		var increment = 0;
 		for (i = 0; i < this.lets.length; i++) {
 			if (this.lets[i].charac === chosenLetter) {
@@ -34,7 +34,7 @@ var Word = function(aWord) {
 		return increment;
 	};
 
-	this.wordRender = function() {
+	this.wordRender = function() { //MAKES WORD FROM LETTERS
 		var str = "";
 		for (i = 0; i < this.lets.length; i++) {
 			str = str + this.lets[i].letterRender();
