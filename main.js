@@ -10,27 +10,27 @@ game = {
 	chancesRemaining : 8,
 
 	validator: function (value) {
-		if (/^[a-zA-Z]+$/.test(value) === false) {
+		if (/^[a-zA-Z]+$/.test(value) === false) { //ENSURES INPUT IS ONLY LETTERS
 			throw new Error("Try choosing a letter, Clownshoe!");
 		}
-		if (value.length != 1) {
+		if (value.length != 1) { //ENSURES ONLY ONE LETTER AT A TIME
 			throw new Error("Your choice must be ONE letter");
 		}
-		if (game.alreadyPicked.indexOf(value) != -1) {
-			throw new Error("Come on, you already chose that");
+		if (game.alreadyPicked.indexOf(value) != -1) { //NO DUPLICATE PICKS
+			throw new Error("You already chose that");
 		}
 		return value;
 	},
-	startGame : function (aWord) {
-		this.resetChancesRemaining();
+	startGame: function (aWord) { //SETS INITIAL CONDITIONS
+		this.resetChances();
 		this.currentWrd = new Word(this.wordBank[Math.floor(Math.random()* this.wordBank.length)]);
 		this.currentWrd.getLets();
 		this.keepPromptingUser();
 	},
-	resetChancesRemaining : function() {
+	resetChances: function() { //REMAINING CHOICES
 		this.chancesRemaining = 8;
 	},
-	keepPromptingUser : function() {
+	keepPromptingUser: function() { //CORRECT, INCORRECT, WIN
 		var self = this;
 		promptly.prompt('CHOOSE A LETTER: ', {validator: self.validator}, function(err, result) {
 			result = result.toLowerCase();

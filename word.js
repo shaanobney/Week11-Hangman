@@ -24,14 +24,14 @@ var Word = function(aWord) {
 	};
 
 	this.checkIfLetterFound = function(chosenLetter) {
-		var whatToReturn = 0;
+		var increment = 0;
 		for (i = 0; i < this.lets.length; i++) {
 			if (this.lets[i].charac === chosenLetter) {
 				this.lets[i].appear = true;
-				whatToReturn++;
+				increment++;
 			}
 		}
-		return whatToReturn;
+		return increment;
 	};
 
 	this.wordRender = function() {
